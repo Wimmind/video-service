@@ -1,0 +1,30 @@
+.footer {
+    background-color: #F2F2F2;
+    width: 100%;
+}
+
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 28px 130px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.footer-logo {
+    display: inline-block;
+    background-image: url(../../assets/icon/footer-logo.png);
+    width: 32px;
+    height: 64px;
+    margin-right: 40px;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    &>span:last-child>a {
+        color: #1F4766;
+    }
+}

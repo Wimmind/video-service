@@ -1,0 +1,35 @@
+.app-wrapper {
+    padding-top: 38px;
+    background-color: #FFFFFF;
+}
+
+.main {
+    width: 100%;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.tabs-list {
+    display: flex;
+    margin-left: 102px;
+}
+
+.tab-item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: #333333;
+    margin-right: 24px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.tab-item_active {
+    color: #E5261E;
+    border-bottom: 2px solid #E5261E;
+}

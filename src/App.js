@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.scss';
+import base from './sass/base.module.scss';
+
+import Footer from './components/footer/footer';
+import Header from './components/header/header';
+import IndexMovies from './components/index-movies/index-movies'
+export default class App extends Component {
+  state = {
+   isMovies : true
+  }
+
+  onMovie = () => {
+    this.setState({isMovies: true})  
+  }
+
+  onChannels = () => {
+    this.setState({isMovies: false})  
+  }
+
+
+  render () {
+    const {isMovies} = this.state;
+
+    let tagMovies = 'tab-item';
+    let tagChannels = 'tab-item';
+    let index;
+
+    if (isMovies){
+      tagMovies += ' tab-item_active'
+      index = <IndexMovies/>
+    }
+    else {
+      tagChannels += ' tab-item_active'
+    }
+
+    return (
+      <div className='app-wrapper'>
+       <Header/>
+       <main className="main">
+        <div className={base.wrapper}>
+          <div className="tabs-container">
+            <li className="tabs-list">
+              <ul className={tagMovies} onClick={this.onMovie}>Фильмы</ul>
+              <ul className={tagChannels} onClick={this.onChannels}>Телеканалы</ul>
+            </li>
+          </div>
+          {index}
+        </div>
+       </main>
+       <Footer/>
+      </div>
+    );
+  }
 }
 
-export default App;
