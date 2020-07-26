@@ -5,20 +5,17 @@
     height: 712px;
     overflow-y: auto;
 }
-.channel-list::-webkit-scrollbar-track
-{
-	border-radius: 2px;
+
+.channel-list::-webkit-scrollbar{
+	width: 8px;
+}
+
+.channel-list::-webkit-scrollbar-track{
 	background-color: #F2F2F2;
 }
 
-.channel-list::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: #BDBDBD;
-}
-
-.channel-list::-webkit-scrollbar-thumb
-{
-    border-radius: 2px;
-	background-color: #BDBDBD;
+.channel-list::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #BDBDBD;
+    border: 2px solid #F2F2F2;
 }

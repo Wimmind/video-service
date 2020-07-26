@@ -4,6 +4,9 @@
     background-color: #F2F2F2;
     border-radius: 8px;
     margin-bottom: 16px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
     display: flex;
 }
 
