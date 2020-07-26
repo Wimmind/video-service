@@ -1,0 +1,46 @@
+.channel-item {
+    width: calc(100% - 10px);
+    height: 162px;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.channel-ico {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.channel-description {
+    padding: 20px 0;
+}
+
+.channel-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 17px;
+}
+
+.telecasts-item {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 12px;
+    &>a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &:first-child>a {
+        color: #E5261E;
+    }
+    &_time {
+        margin-right: 16px;
+    }
+
+}

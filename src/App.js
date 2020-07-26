@@ -5,7 +5,8 @@ import base from './sass/base.module.scss';
 
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
-import IndexMovies from './components/index-movies/index-movies'
+import IndexMovies from './components/index-movies/index-movies';
+import IndexChannels from './components/index-channels/index-channels';
 export default class App extends Component {
   state = {
    isMovies : true
@@ -33,6 +34,7 @@ export default class App extends Component {
     }
     else {
       tagChannels += ' tab-item_active'
+      index = <IndexChannels/>
     }
 
     return (

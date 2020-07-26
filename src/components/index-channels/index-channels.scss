@@ -1,0 +1,24 @@
+.channel-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+    height: 712px;
+    overflow-y: auto;
+}
+.channel-list::-webkit-scrollbar-track
+{
+	border-radius: 2px;
+	background-color: #F2F2F2;
+}
+
+.channel-list::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #BDBDBD;
+}
+
+.channel-list::-webkit-scrollbar-thumb
+{
+    border-radius: 2px;
+	background-color: #BDBDBD;
+}
