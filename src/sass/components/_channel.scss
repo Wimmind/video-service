@@ -1,6 +1,5 @@
 .channel-item {
     width: calc(100% - 10px);
-    height: 162px;
     background-color: #F2F2F2;
     border-radius: 8px;
     margin-bottom: 16px;
@@ -15,10 +14,27 @@
     width: 400px;
     align-items: center;
     justify-content: center;
+    @include media-laptop {
+        width: 200px;
+    }
+    @include media-tablet {
+        width: 100px;
+        &>a>img {
+            object-fit: contain;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @include media-mobile {
+        display: none;
+    }
 }
 
 .channel-description {
     padding: 20px 0;
+    @include media-mobile {
+        padding: 20px;
+    }
 }
 
 .channel-title {
@@ -30,20 +46,25 @@
 }
 
 .telecasts-item {
+    font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 12px;
-    &>a {
-        &:hover {
-            text-decoration: underline;
-        }
+    &:last-child {
+        margin-bottom: 0px;
     }
-    &:first-child>a {
-        color: #E5261E;
+    &:first-child>span {
+        color: $red;
     }
     &_time {
         margin-right: 16px;
     }
-
+    @include media-laptop {
+        font-size: 14px;
+    }
+    @include media-tablet {
+        font-size: 12px;
+    }
 }
+

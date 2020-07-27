@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import './App.scss';
-import base from './sass/base.module.scss';
-
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import IndexMovies from './components/index-movies/index-movies';
@@ -15,8 +12,6 @@ export default class App extends Component {
     userNameForHeader: localStorage.getItem('userName') || '',
     isUserNameEnter : false
   }
-
-  
 
   onMovie = () => {
     this.setState({isMovies: true})  
@@ -98,7 +93,7 @@ export default class App extends Component {
         hiddenUsername = {this.hiddenUsername}
       />
        <main className="main">
-        <div className={base.wrapper}>
+        <div className='wrapper'>
           <div className="tabs-container">
             <li className="tabs-list">
               <ul className={tagMovies} onClick={this.onMovie}>Фильмы</ul>

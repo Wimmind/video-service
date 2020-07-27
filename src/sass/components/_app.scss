@@ -27,11 +27,14 @@
     margin-right: 24px;
     height: 42px;
     cursor: pointer;
+    @include media-mobile {
+        font-size: 22px;
+    }
 }
 
 .tab-item_active {
-    color: #E5261E;
-    border-bottom: 2px solid #E5261E;
+    color: $red;
+    border-bottom: 2px solid $red;
 }
 
 .fade-block {
@@ -80,6 +83,31 @@
 
 .input-checkbox {
     margin-right: 8px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.input-checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.input-checkbox+label::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-checkbox:checked+label::before {
+    background-image: url(../../assets/icon/checkbox-checked.png);
 }
 
 .modal-sign-in-button {

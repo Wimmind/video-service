@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
-import './index-movies.scss';
-
-
-import catImg from '../../assets/image/cat.jpg'; 
-import batmanImg from '../../assets/image/batman.jpg'; 
-import stripperImg from '../../assets/image/stripper.jpg'; 
-import hollywoodImg from '../../assets/image/hollywood.jpg'; 
+import catImg from '../../../assets/image/cat.jpg'; 
+import batmanImg from '../../../assets/image/batman.jpg'; 
+import stripperImg from '../../../assets/image/stripper.jpg'; 
+import hollywoodImg from '../../../assets/image/hollywood.jpg'; 
 
 export default class IndexMovies extends Component {
     state = {
@@ -15,10 +12,10 @@ export default class IndexMovies extends Component {
   
     render () {
       const newMovies = [
-        {image: catImg, title: 'Мульт в кино. Выпуск №103. Некогда грустить!', description : 'лалалала'  },
-        {image: batmanImg, title: 'Новый Бэтмен', description : 'лалалала'  },
+        {image: catImg, title: 'Мульт в кино. Выпуск №103. Некогда грустить!', description : 'В новом выпуске ми-ми-мишки изобретут машину сна, а Дракоша Тоша научит завязывать шнурки.'  },
+        {image: batmanImg, title: 'Новый Бэтмен', description : 'Супергеройский боевик с элементами неонуара режиссёра Кристофера Нолана по комиксам DC Comics'  },
         {image: hollywoodImg, title: 'Однажды... в Голливуде', description : 'Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.'  },
-        {image: stripperImg, title: 'Стриптизёрши', description : 'лалалала'  }
+        {image: stripperImg, title: 'Стриптизёрши', description : 'Танцовщицы элитного стриптиз-клуба, клиенты которого - известные финансисты с Уолл-Стрит - привыкли к большим заработкам и роскошной жизни.'  }
       ]
 
       const colorGenreArray = [
@@ -30,7 +27,7 @@ export default class IndexMovies extends Component {
 
       return (
         <div>
-          <p className="movies-title">🔥 Новинки</p>
+          <p className="movies-title"><span role="img" aria-label="fire">🔥</span>Новинки</p>
           <div className='items-container'>
           {newMovies.map((field,i) => (
             <a  

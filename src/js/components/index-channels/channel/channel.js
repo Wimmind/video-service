@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-
-import './channel.scss';
-
-
 export default class Channel extends Component {
     state = {
       
@@ -16,7 +12,8 @@ export default class Channel extends Component {
                 <div className='channel-ico'>
                     <a href='./'>
                         <img 
-                        src={icon}
+                            src={icon}
+                            alt="channel icon"
                         />
                     </a>
                 </div>
@@ -26,12 +23,12 @@ export default class Channel extends Component {
                         {
                             telecasts.map((field,i)=>(
                                 <p  key={i.toString() + 'ch1'} className='telecasts-item'>
-                                    <a href='./'>
-                                        <span className='telecasts-item_time'>
-                                            {field.time}
-                                        </span>
+                                    <span className='telecasts-item_time'>
+                                        {field.time}
+                                    </span>
+                                    <span>
                                         {field.title}
-                                    </a>
+                                    </span>
                                 </p>
                             ))
                         }

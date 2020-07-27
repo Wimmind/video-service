@@ -4,17 +4,38 @@
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 16px;
+    @include media-mobile {
+       text-align: center;
+    }
 }
 
 .items-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 32px;
+    @include media-mobile {
+        justify-content: center;
+    }
 }
 
 .movie-item {
     width: 280px;
     text-decoration: none;
+    @include media-laptop {
+        &:nth-child(n+4){
+            display: none;
+        }
+    }
+    @include media-tablet {
+        &:nth-child(n+3){
+            display: none;
+        }
+    }
+    @include media-mobile {
+        &:nth-child(n+2){
+            display: none;
+        }
+    }
 }
 
 .movie-item-img {
@@ -48,7 +69,9 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
-
+    @include media-mobile_small {
+        font-size: 16px;
+    }
 }
 
 .movie-item-description {

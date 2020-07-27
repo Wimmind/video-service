@@ -7,10 +7,18 @@
     display: flex;
     align-items: center;
     padding: 28px 130px;
+    font-family: 'Rubik';
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
+    @include media-tablet {
+        padding: 28px 55px;
+    }
+    @include media-mobile {
+        font-size: 10px;
+        padding: 28px 80px;
+    }
 }
 
 .footer-logo {
@@ -19,12 +27,15 @@
     width: 32px;
     height: 64px;
     margin-right: 40px;
+    @include media-tablet {
+        display: none;
+    }
 }
 
 .footer-info {
     display: flex;
     flex-direction: column;
     &>span:last-child>a {
-        color: #1F4766;
+        color: $htc-color;
     }
 }

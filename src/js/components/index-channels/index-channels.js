@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import './index-channels.scss';
-
-import firstChannelIcon from '../../assets/icon/first-channel.png'; 
-import twiceTwoIcon from '../../assets/icon/2x2.png'; 
-import rbcIcon from '../../assets/icon/rbc.png'; 
-import amediaIcon from '../../assets/icon/amedia.png'; 
+import firstChannelIcon from '../../../assets/icon/first-channel.png'; 
+import twiceTwoIcon from '../../../assets/icon/2x2.png'; 
+import rbcIcon from '../../../assets/icon/rbc.png'; 
+import amediaIcon from '../../../assets/icon/amedia.png'; 
 
 import Channel from './channel/channel'
 

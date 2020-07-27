@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './footer.scss';
-import base from '../../sass/base.module.scss';
 
 export default class Footer extends Component {
   state = {
@@ -10,7 +8,7 @@ export default class Footer extends Component {
   render () {
     return (
       <footer className='footer'>
-        <div className={base.wrapper + ' ' +"footer-wrapper"}>
+        <div className="wrapper footer-wrapper">
           <span className='footer-logo'></span>
           <div className='footer-info'>
             <span>426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург») </span>

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
-import './header.scss';
-import base from '../../sass/base.module.scss';
-import logo from '../../assets/icon/logo.png'; 
-
+import logo from '../../../assets/icon/logo.png'; 
 
 export default class Header extends Component {
     state = {
@@ -49,7 +46,7 @@ export default class Header extends Component {
         }
         return (
             <header className="header">
-                <div className={base.wrapper + ' ' +"header-wrapper"}>
+                <div className="wrapper header-wrapper">
                     <a 
                         className="header-logo"
                         href={'./'}
