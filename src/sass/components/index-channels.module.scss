@@ -1,0 +1,26 @@
+@import "../abstract/constants";
+@import "../abstract/mixin";
+
+.channel_list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+    height: 697px;
+    overflow-y: auto;
+    scrollbar-color: #BDBDBD #F2F2F2;
+    scrollbar-width: thin;
+}
+
+.channel_list::-webkit-scrollbar{
+	width: 8px;
+}
+
+.channel_list::-webkit-scrollbar-track{
+	background-color: #F2F2F2;
+}
+
+.channel_list::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #BDBDBD;
+    border: 2px solid #F2F2F2;
+}

@@ -1,13 +1,20 @@
+@import "../abstract/constants";
+@import "../abstract/mixin";
+
 .header {
     width: 100%;
 }
 
-.header-wrapper {
+.hidden {
+    display: none;
+}
+
+.wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 41px;
     @include media-tablet {
         flex-direction: column;
         margin-bottom: 150px;
@@ -17,7 +24,7 @@
     }
 }
 
-.search-group {
+.search_group {
     width: 402px;
     display: flex;
     justify-content: space-between;
@@ -26,25 +33,25 @@
     }
 }
 
-.search-input {
+.search_input {
     width: calc(100% - 70px);
 }
 
-.search-button {
+.search_button {
     color: $red;
     width: 50px;
     background-color: transparent;
 }
 
 
-.username-group {
+.username_group {
     display: flex;
     align-items: center;
     width: 182px;
     position: relative;
 }
 
-.sign-in-button {
+.sign_in_button {
     position: absolute;
     right: 0;
     width: 113px;
@@ -60,7 +67,7 @@
     }
 }
 
-.sign-out-button {
+.sign_out_button {
     position: absolute;
     right: 0;
     width: 52px;
@@ -68,11 +75,11 @@
     background-color: transparent;
 }
 
-.username-input {
+.username_input {
     width: 130px;
 }
 
-.username-text {
+.username_text {
     width: 130px;
     overflow-x: hidden;
     text-overflow: ellipsis;

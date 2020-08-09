@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import s from '../sass/components/app.module.scss'
+
 import Footer from './components/footer/footer';
+import Main from './components/main/main';
 import Header from './components/header/header';
-import IndexMovies from './components/index-movies/index-movies';
-import IndexChannels from './components/index-channels/index-channels';
+import ModalBlock from './components/modalBlock/modalBlock'
 export default class App extends Component {
   state = {
     isMovies: true,
@@ -29,6 +31,11 @@ export default class App extends Component {
     localStorage.setItem('userName', this.state.userName);
   }
 
+  onModalHidden = (e) => {
+    e.preventDefault()
+    this.setState({modalHidden: true}) 
+  }
+
   hiddenUsername = () => {
     this.setState({isUserNameEnter: true})
   }
@@ -42,7 +49,8 @@ export default class App extends Component {
     e.preventDefault();
     this.setState({userName: ''})  
     this.setState({userNameForHeader:''}) 
-  
+    localStorage.setItem('userName', '');
+    this.setState({isUserNameEnter:false}) 
   }
 
   changeUserName = (e) => {
@@ -60,28 +68,8 @@ export default class App extends Component {
       isUserNameEnter
     } = this.state;
 
-    let tagMovies = 'tab-item';
-    let tagChannels = 'tab-item';
-    let modalBlock = 'authorization-block';
-    let fadeBlock = 'fade-block';
-    let index;
-
-    if (isMovies){
-      tagMovies += ' tab-item_active'
-      index = <IndexMovies/>
-    }
-    else {
-      tagChannels += ' tab-item_active'
-      index = <IndexChannels/>
-    }
-
-    if (modalHidden){
-      modalBlock += ' hidden';
-      fadeBlock += ' hidden'
-    }
-
     return (
-      <div className='app-wrapper'>
+      <div className={s.wrapper}>
        <Header 
         buttonModalFunc={this.showModalBlock}
         logoutButton = {this.logout}
@@ -92,51 +80,17 @@ export default class App extends Component {
         isUserNameEnter = {isUserNameEnter}
         hiddenUsername = {this.hiddenUsername}
       />
-       <main className="main">
-        <div className='wrapper'>
-          <div className="tabs-container">
-            <li className="tabs-list">
-              <ul className={tagMovies} onClick={this.onMovie}>Фильмы</ul>
-              <ul className={tagChannels} onClick={this.onChannels}>Телеканалы</ul>
-            </li>
-          </div>
-          {index}
-        </div>
-       </main>
+       <Main 
+        isMovies={isMovies} 
+        onMovie={this.onMovie} 
+        onChannels={this.onChannels}/>
        <Footer/>
-       <div className={fadeBlock}>
-         <form className={modalBlock}>
-           <p className="authorization-block_title">Вход</p>
-          <input 
-            className='input-inlet'
-            placeholder="Логин" 
-            autoFocus={true}
-            onChange={this.changeUserName}
-            value={userName}
-          />
-          <input 
-            className='input-inlet'
-            placeholder="Пароль" 
-            
-          />
-          <div className='checkbox-group'>
-          <input
-            className='input-checkbox'
-            type='checkbox'
-            id='checkbox'
-          />
-          <label htmlFor='checkbox'>
-            Запомнить
-          </label>
-          </div>
-          <button 
-            onClick={this.closeModalBlock}
-            className="modal-sign-in-button" 
-            type="submit"
-          >Войти
-          </button> 
-         </form>
-        </div>
+       <ModalBlock 
+        closeModalBlock={this.closeModalBlock} 
+        changeUserName={this.changeUserName} 
+        userName={userName} 
+        modalHidden={modalHidden}
+        onModalHidden = {this.onModalHidden}/>
       </div>
     );
   }

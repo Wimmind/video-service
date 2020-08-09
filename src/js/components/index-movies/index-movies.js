@@ -1,69 +1,53 @@
 import React, { Component } from 'react';
 
-import catImg from '../../../assets/image/cat.jpg'; 
-import batmanImg from '../../../assets/image/batman.jpg'; 
-import stripperImg from '../../../assets/image/stripper.jpg'; 
-import hollywoodImg from '../../../assets/image/hollywood.jpg'; 
-
+import s from '../../../sass/components/index-movies.module.scss'
+import indexData from '../../data/indexData'
 export default class IndexMovies extends Component {
     state = {
       
     }
   
     render () {
-      const newMovies = [
-        {image: catImg, title: 'Мульт в кино. Выпуск №103. Некогда грустить!', description : 'В новом выпуске ми-ми-мишки изобретут машину сна, а Дракоша Тоша научит завязывать шнурки.'  },
-        {image: batmanImg, title: 'Новый Бэтмен', description : 'Супергеройский боевик с элементами неонуара режиссёра Кристофера Нолана по комиксам DC Comics'  },
-        {image: hollywoodImg, title: 'Однажды... в Голливуде', description : 'Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.'  },
-        {image: stripperImg, title: 'Стриптизёрши', description : 'Танцовщицы элитного стриптиз-клуба, клиенты которого - известные финансисты с Уолл-Стрит - привыкли к большим заработкам и роскошной жизни.'  }
-      ]
-
-      const colorGenreArray = [
-        {first: '#F2C94C', second: '#F29A4A', title: 'Комедии', smail: '😁'},
-        {first: '#F2994A', second: '#EB5757', title: 'Драмы', smail: '😭'},
-        {first: '#56CCF2', second: '#2F80ED', title: 'Фантастика', smail: '👽'},
-        {first: '#828282', second: '#333333', title: 'Ужасы', smail: '👻'}
-      ]
 
       return (
         <div>
-          <p className="movies-title"><span role="img" aria-label="fire">🔥</span>Новинки</p>
-          <div className='items-container'>
-          {newMovies.map((field,i) => (
+          <p className={s.movies_title}><span role="img" aria-label="fire">🔥</span>Новинки</p>
+          <div className={s.items_container}>
+          {indexData.newMovies.map((field,i) => (
             <a  
               key={i.toString() + 'a'} 
               href={'./'}
-              className='movie-item'
+              className={s.movie_item}
             >
               <div     
                 style={{backgroundImage: `url(${field.image})`}}
-                className='movie-item-img'
+                className={s.movie_item_img}
               > 
-                <div className='movie-item-fade'>
-                  <span className='movie-item-description'>{field.description}</span>  
+                <div className={s.movie_item_fade}>
+                  <span className={s.movie_item_description}>{field.description}</span>  
                 </div>        
               </div>
               <p 
-                className='movie-item-title'
+                className={s.movie_item_title}
               >
                 {field.title}
               </p>
             </a>
             ))}
           </div>
-          <p className="movies-title">Жанры</p>
-          <div className='items-container'>
-          {colorGenreArray.map((field,i) => (
+          <p className={s.movies_title}>Жанры</p>
+          <div className={s.items_container}>
+          {indexData.colorGenreArray.map((field,i) => (
             <a  
               key={i.toString() + 'a'} 
               href={'./'}
-              className='movie-item'
+              className={s.movie_item}
             >
               <div     
                 style={{background: `linear-gradient(136.27deg, ${field.first} 8.44%, ${field.second} 91.36%)`}}
-                className='genre-item-img'
-              > <span className='genre-item-ico'>{field.smail}</span>
-                <span className='genre-item-title'>{field.title}  </span>        
+                className={s.genre_item_img}
+              > <span className={s.genre_item_ico}>{field.smail}</span>
+                <span className={s.genre_item_title}>{field.title}  </span>        
               </div>
             </a>
             ))}

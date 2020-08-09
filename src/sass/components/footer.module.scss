@@ -1,9 +1,13 @@
+@import "../abstract/constants";
+@import "../abstract/mixin";
+
+
 .footer {
     background-color: #F2F2F2;
     width: 100%;
 }
 
-.footer-wrapper {
+.wrapper {
     display: flex;
     align-items: center;
     padding: 28px 130px;
@@ -21,7 +25,7 @@
     }
 }
 
-.footer-logo {
+.logo {
     display: inline-block;
     background-image: url(../../assets/icon/footer-logo.png);
     width: 32px;
@@ -32,10 +36,11 @@
     }
 }
 
-.footer-info {
+.info {
     display: flex;
     flex-direction: column;
     &>span:last-child>a {
+        font-weight: 500;
         color: $htc-color;
     }
 }

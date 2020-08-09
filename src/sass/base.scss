@@ -1,3 +1,6 @@
+@import "./abstract/constants";
+@import "./abstract/mixin";
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +26,11 @@ a {
     text-decoration: none;
 }
 
-.wrapper {
+li {
+    list-style-type: none;
+}
+
+.base-wrapper {
     max-width: $content-width;
     margin: 0 auto;
     padding: 0 130px;
@@ -33,7 +40,7 @@ a {
     }
     @include media-tablet {
         max-width: $mobile-width;
-        padding: 0 56px;
+        padding: 0 20px;
     }
 }
 

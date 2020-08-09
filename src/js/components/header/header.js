@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
+import s from '../../../sass/components/header.module.scss'
+
 import logo from '../../../assets/icon/logo.png'; 
 
 export default class Header extends Component {
-    state = {
-        
-    }
-
 
     render () {
         const {
@@ -27,28 +25,27 @@ export default class Header extends Component {
         let inputUserName;
         let userNameText;
         if (isUserNameEnter) {
-            userNameText = 'hidden'
-            inputUserName = 'username-input'
+            userNameText = s.hidden
+            inputUserName = s.username_input
         } else {
-            userNameText = 'username-text'
-            inputUserName = 'username-input hidden'
+            userNameText = s.username_text
+            inputUserName =s.hidden;
         }
 
-
         if (userName.length) {
-            enterButton = 'sign-out-button'
+            enterButton = s.sign_out_button
             enterButtonText = 'Выйти'
             enterButtonFunction = logoutButton;
         } else {
-            enterButton = 'sign-in-button'
+            enterButton = s.sign_in_button
             enterButtonText = 'Войти'
             enterButtonFunction = buttonModalFunc;
         }
         return (
-            <header className="header">
-                <div className="wrapper header-wrapper">
+            <header className={s.header}>
+                <div className={[s.wrapper,'base-wrapper'].join(' ')}>
                     <a 
-                        className="header-logo"
+                        className={s.logo}
                         href={'./'}
                         >
                         <img 
@@ -58,19 +55,18 @@ export default class Header extends Component {
                             alt="Видеосервис"
                         />
                     </a>
-                    <form className="search-group">
+                    <form className={s.search_group}>
                         <input 
-                            className="input-inlet search-input" 
+                            className={[s.search_input,'input-inlet'].join(' ')}
                             placeholder="Поиск..." 
-                            ref={el=> { this.el = el; }}
                         />
                         <button 
-                            className="search-button"
+                            className={s.search_button}
                             type="submit"
                         >Найти
                         </button>
                     </form>
-                    <div className='username-group'>
+                    <div className={s.username_group}>
                     <span 
                         onClick={hiddenUsername}
                         className={userNameText}
